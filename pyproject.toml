@@ -1,18 +1,18 @@
 [project]
-name = "ragas"
+name = "gigaragas"
 dependencies = [
     "numpy",
     "datasets",
     "tiktoken",
-    "langchain",
-    "langchain-core",
-    "langchain-community",
-    "langchain_openai",
-    "nest-asyncio",
-    "appdirs",
-    "pydantic>=2",
+    "gigachain<0.3",
+    "gigachain-core<0.3",
+    "gigachain-community",
+    "gigachain-openai",
     "openai>1",
     "pysbd>=0.3.4",
+    "nest-asyncio",
+    "appdirs",
+    "nltk",
 ]
 dynamic = ["version", "readme"]
 
@@ -20,7 +20,6 @@ dynamic = ["version", "readme"]
 all = [
     "sentence-transformers",
     "transformers",
-    "nltk",
     "rouge_score",
     "rapidfuzz",
     "pandas",

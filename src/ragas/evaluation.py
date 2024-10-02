@@ -9,7 +9,7 @@ from langchain_core.callbacks import BaseCallbackHandler, BaseCallbackManager
 from langchain_core.embeddings import Embeddings as LangchainEmbeddings
 from langchain_core.language_models import BaseLanguageModel as LangchainLLM
 
-from ragas._analytics import EvaluationEvent, track, track_was_completed
+# from ragas._analytics import EvaluationEvent, track, track_was_completed
 from ragas.callbacks import new_group
 from ragas.cost import TokenUsage
 from ragas.dataset_schema import EvaluationDataset, MultiTurnSample, SingleTurnSample
@@ -54,7 +54,6 @@ if t.TYPE_CHECKING:
 RAGAS_EVALUATION_CHAIN_NAME = "ragas evaluation"
 
 
-@track_was_completed
 def evaluate(
     dataset: t.Union[Dataset, EvaluationDataset],
     metrics: list[Metric] | None = None,
@@ -347,20 +346,6 @@ def evaluate(
         for i in reproducable_metrics:
             metrics[i].reproducibility = 1  # type: ignore
 
-    # log the evaluation event
-    metrics_names = [m.name for m in metrics]
-    metric_lang = [get_feature_language(m) for m in metrics]
-    metric_lang = np.unique([m for m in metric_lang if m is not None])
-    track(
-        EvaluationEvent(
-            event_type="evaluation",
-            metrics=metrics_names,
-            evaluation_mode="",
-            num_rows=len(dataset),
-            language=metric_lang[0] if len(metric_lang) > 0 else "",
-            in_ci=in_ci,
-        )
-    )
     return result
 
 

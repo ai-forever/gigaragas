@@ -91,9 +91,3 @@ Refer to our [documentation](https://docs.ragas.io/) to learn more.
 ## 🫂 Community
 
 If you want to get more involved with Ragas, check out our [discord server](https://discord.gg/5qGUJ6mh7C). It's a fun community where we geek out about LLM, Retrieval, Production issues, and more.
-
-## 🔍 Open Analytics
-
-We track very basic usage metrics to guide us to figure out what our users want, what is working, and what's not. As a young startup, we have to be brutally honest about this which is why we are tracking these metrics. But as an Open Startup, we open-source all the data we collect. You can read more about this [here](https://github.com/explodinggradients/ragas/issues/49). **Ragas does not track any information that can be used to identify you or your company**. You can take a look at exactly what we track in the [code](./src/ragas/_analytics.py)
-
-To disable usage-tracking you set the `RAGAS_DO_NOT_TRACK` flag to true.
