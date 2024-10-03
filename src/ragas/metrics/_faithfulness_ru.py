@@ -36,7 +36,7 @@ LONG_FORM_ANSWER_PROMPT_RU = Prompt(
                         ],
                     },
                 ]
-            ).dicts(),
+            ).model_dump(),
         }
     ],
     input_keys=["question", "answer", "sentences"],
@@ -85,7 +85,7 @@ NLI_STATEMENTS_MESSAGE_RU = Prompt(
                         "verdict": 0,
                     },
                 ]
-            ).dicts(),
+            ).model_dump(),
         },
         {
             "context": """Фотосинтез - это процесс, используемый растениями, водорослями и определенными бактериями для превращения световой энергии в химическую энергию.""",
@@ -98,7 +98,7 @@ NLI_STATEMENTS_MESSAGE_RU = Prompt(
                         "verdict": 0,
                     }
                 ]
-            ).dicts(),
+            ).model_dump(),
         },
     ],
     input_keys=["context", "statements"],
