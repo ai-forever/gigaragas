@@ -42,6 +42,7 @@ docs = [
 package-dir = {"" = "src"}
 
 [tool.setuptools.dynamic]
+version = {attr = "ragas.__version__"}
 readme = {file = ["README.md"], content-type = "text/plain"}
 
 [tool.ruff]
@@ -51,11 +52,8 @@ exclude = ["*.ipynb"]
 ignore = ["E501"]
 
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=45"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools_scm]
-write_to = "src/ragas/_version.py"
 
 [tool.pytest.ini_options]
 addopts = "-n 4"

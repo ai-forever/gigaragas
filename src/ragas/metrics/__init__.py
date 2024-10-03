@@ -7,6 +7,7 @@ from ragas.metrics._answer_relevance import (
     ResponseRelevancy,
     answer_relevancy,
 )
+from ragas.metrics._answer_relevance_ru import answer_relevancy_ru
 from ragas.metrics._answer_similarity import (
     AnswerSimilarity,
     SemanticSimilarity,
@@ -25,12 +26,17 @@ from ragas.metrics._context_precision import (
     NonLLMContextPrecisionWithReference,
     context_precision,
 )
+from ragas.metrics._context_precision_ru import (
+    context_precision_ru,
+    context_utilization_ru
+)
 from ragas.metrics._context_recall import (
     ContextRecall,
     LLMContextRecall,
     NonLLMContextRecall,
     context_recall,
 )
+from ragas.metrics._context_recall_ru import context_recall_ru
 from ragas.metrics._datacompy_score import DataCompyScore
 from ragas.metrics._domain_specific_rubrics import (
     RubricsScoreWithoutReference,
@@ -38,6 +44,7 @@ from ragas.metrics._domain_specific_rubrics import (
 )
 from ragas.metrics._factual_correctness import FactualCorrectness
 from ragas.metrics._faithfulness import Faithfulness, FaithfulnesswithHHEM, faithfulness
+from ragas.metrics._faithfulness_ru import faithfulness_ru
 from ragas.metrics._goal_accuracy import (
     AgentGoalAccuracyWithoutReference,
     AgentGoalAccuracyWithReference,
@@ -63,17 +70,22 @@ __all__ = [
     "answer_correctness",
     "Faithfulness",
     "faithfulness",
+    "faithfulness_ru",
     "FaithfulnesswithHHEM",
     "AnswerSimilarity",
     "answer_similarity",
     "ContextPrecision",
     "context_precision",
+    "context_precision_ru",
     "ContextUtilization",
     "ContextRecall",
     "context_recall",
+    "context_recall_ru",
+    "context_utilization_ru",
     "AspectCritic",
     "AnswerRelevancy",
     "answer_relevancy",
+    "answer_relevancy_ru",
     "ContextEntityRecall",
     "context_entity_recall",
     "SummarizationScore",

@@ -164,7 +164,7 @@ class LLMContextRecall(MetricWithLLM, SingleTurnMetric):
         return self.context_recall_prompt.format(question=qstn, context=ctx, answer=gt)
 
     def _compute_score(self, response: t.Any) -> float:
-        response = [1 if item.attributed else 0 for item in response.__root__]
+        response = [1 if item.attributed else 0 for item in response.root]
         denom = len(response)
         numerator = sum(response)
         score = numerator / denom if denom > 0 else np.nan
